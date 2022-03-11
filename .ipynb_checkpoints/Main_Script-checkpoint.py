@@ -2,13 +2,11 @@ import pandas as pd
 from scipy.stats import pearsonr
 
 df = pd.read_csv("39-Versanddaten.csv", sep=";")
-print("=================================================================\n")
 
 ## 1 - Affichage des titres des colonnes, des 15 premières lignes et du nombres 
 ## d'enregistrements.
 print(df.head(15))
 print(f"\nLe nombre total d'enregistrement est de {len(df)}.")
-print("=================================================================\n")
 
 
 ## 2 - Analyse univariée de chaque caractéristique métrique et affichage des résultats
@@ -17,7 +15,6 @@ data = df.describe().round(2).iloc[1:3,1:]
 print(data)
 with open("Résultats d'évaluation.txt", "w") as file:
     file.write(str(data))
-print("=================================================================\n")
 
 
 ## 3 - La partie des diagrammes sont dans le fichier Diagrammes.ipynb
@@ -41,7 +38,6 @@ elif corr == 1 or corr == -1:
     print("Il s'agit d'une corrélation Parfaite.")
 else:
     print("Il s'agit d'une corrélation Nulle.")
-print("=================================================================\n")
 
 
 ## 5 - Cette partie se trouve dans le fichier Diagrammes.ipynb
